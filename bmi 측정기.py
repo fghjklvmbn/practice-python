@@ -7,7 +7,7 @@ height = float(height)
 weight = int(weight)
 #bmi 공식 대입
 bmi =  int(weight) / (float(height)*float(height)) 
-
+#bmi, 나이 출력
 print("당신의 bmi는 {}입니다.".format(bmi))
 print("당신의 나이는 {}세입니다.".format(old))
 print("프로그램이 종료되었습니다. \n향후 업데이트 시 나이별 bmi를 업데이트 할 예정이니, 기다려주세요!")
