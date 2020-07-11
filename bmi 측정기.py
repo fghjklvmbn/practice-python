@@ -9,5 +9,5 @@ weight = int(weight)
 bmi =  int(weight) / (float(height)*float(height)) 
 #bmi, 나이 출력
 print("당신의 bmi는 {}입니다.".format(bmi))
-print("당신의 나이는 {}세입니다.".format(old))
-print("프로그램이 종료되었습니다. \n향후 업데이트 시 나이별 bmi를 업데이트 할 예정이니, 기다려주세요!")
+print("향후 업데이트 시 나이별 bmi를 업데이트 할 예정이니, 기다려주세요!")
+input("프로그램을 종료하시려면 아무키나 눌러주세요...")
