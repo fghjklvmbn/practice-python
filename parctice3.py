@@ -31,10 +31,10 @@ class unit:
         self.hp = hp
         self.damage = damage
         print("{0}유닛이 생성되었습니다.".format(self.name))
-        print("체력 {0}, 공격력{1}".format(self.hp, self.damage))
+        print("체력 {}, 공격력{}".format(self.hp, self.damage))
 
 unit1 = unit("레이스", 80, 5)
-print("유닛이름 : {0}, 공격력 : {1}".format(unit1.name, unit1.damage))
+print("유닛이름 : {}, 공격력 : {}".format(unit1.name, unit1.damage))
 
 unit2 = unit("레이스2", 90, 43)
 
