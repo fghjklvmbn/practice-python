@@ -26,21 +26,61 @@ attack(tank_name, "1시", tank_attack)
 attack(tank1_name, "1시", tank1_attack)'''
 
 class unit:
-    def __init__(self, name, hp, damage):
+    def __init__(self, name, hp, speed):
         self.name= name
         self.hp = hp
+        self.speed = speed
+
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{}: {} 방향으로 이동합니다.[속도 {}]".format(\
+            self.name, location, self.speed))
+        
+
+#데미지와 체력 관련 코드(공격유닛)
+class attackunit(unit):
+    def __init__(self, name, hp, damage, speed):
+        unit.__init__(self, name, hp, speed)
         self.damage = damage
-        print("{0}유닛이 생성되었습니다.".format(self.name))
-        print("체력 {}, 공격력{}".format(self.hp, self.damage))
 
-unit1 = unit("레이스", 80, 5)
-print("유닛이름 : {}, 공격력 : {}".format(unit1.name, unit1.damage))
+    def attack(self, location):
+        print("{}을 {} 방향으로 적을 공격합니다.".format(\
+            self.name, location))
+         
+    def damaged(self, damage):
+        print("{}: {}데미지를 입었습니다.".format(self.name, self.damage))
+        self.hp -= damage
+        print("남은 hp가 {}입니다.".format(self.hp))
+        if self.hp <= 0:
+            print("{}이 파괴되었습니다.".format(self.name))
+#날수 있는 기능을 가진 클래스
+class flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+    
+    def fly(self, name, location):
+        print("{} : {} 방향으로 날아가고 있습니다. [속도 {}]".\
+            format(name, location, self.flying_speed))
 
-unit2 = unit("레이스2", 90, 43)
+class flyableattackunit(attackunit, flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        attackunit.__init__(self, name, hp, 0, damage)
+        flyable.__init__(self, flying_speed)
+    def move(self, location):
+        print("{공중유닛 이동}")
+        self.fly(self.name, location)
 
-unit2.clocking = True
-unit1.clocking = True
+class buildingunit:
+    def __init__(self, name, hp, location ):
+        pass
 
-if unit1.clocking == True:
-    print("{}와 {}는 강제로 마인드 컨트롤 당했습니다.".format(unit1.name, unit2.name))
+supply_depot = buildingunit("서플라이 디폿", 500, "7시")
 
+def game_start():
+    print("게임을 시작하겠습니다.")
+
+def game_over():
+    pass
+
+game_start()
+game_over()
