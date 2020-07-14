@@ -11,8 +11,6 @@ print("나는 {}살 입니다".format(20))
 print("나는 {}색과 {}색을 좋아해요".format("파란", "노란"))
 print("나는 {1}색과 {0}색을 좋아해요".format("파란", "노란"))
 print("나는 {0}색과 {1}색을 좋아해요".format("파란", "노란"))
-print("나는 {1}색과 {1}색을 좋아해요".format("파란", "노란"))
-print("나는 {0}색과 {0}색을 좋아해요".format("파란", "노란"))
 
 
 print("나는 {a}살 이고, {b}을 좋아합니다.".format(a = 10, b = "빨간색"))
@@ -34,3 +32,14 @@ print("red apple \rpine")
 print("red d\bapple")
 # \t : 텝키 대신 사용
 print("pe\tpper")
+
+#복습
+url = "https://naver.com"
+url1 = url.replace("https://", "") #https://를 없앰
+url1 = url1[:url1.index(".")]
+a = len(url1)
+a = str(a)
+b = len("e")
+b = str(b)
+url1 = url1[0:3] #nav 표시
+print(url1 + a + b + "!")
