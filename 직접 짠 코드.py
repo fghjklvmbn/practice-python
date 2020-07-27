@@ -1,4 +1,5 @@
-import sys
+#커피 나왔습니다
+import sys #sys를 임포트하여 아래의 sys.exit() 함수를 작동시키게 합니다.
 customer = "박경환"
 index = 5
 person = "unknown"
