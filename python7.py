@@ -11,20 +11,23 @@ for waiting_no in range(1, 6):
 #    print("{}번째 손님 {}님 커피 나왔습니다.".format(index, customer))
 #    index += 5
 
+import sys
 customer = "박경환"
 index = 5
-네 = True
-아니요 = False
+person = "unknown"
 while index >= 1:
     print("{}, 커피준비 되었습니다. {}번쨰 남았습니다.".format(customer, index))
     index -= 1
-    input("혹시 박경환 님이신가요?: ")
-    if 네:
+    person = input("성명을 적어주십시오: ")
+    if person == customer:
         print("커피 나왔습니다.")
+        sys.exit()
+    else:
+        print("{} 님이 아닙니다.".format(person))
     if index == 0:
-        print("커피 폐기 처분 하겠습니다.")
-person = "unknown"
+        print("커피를 폐기처분 하겠습니다.")
+#person = "unknown"
 
-while person != customer:
-    print("{}님 커피나왔습니다.".format(customer))
-    person = input("이름을 적으시오: ")
+#while person != customer:
+#    print("{}님 커피나왔습니다.".format(customer))
+#    person = input("이름을 적으시오: ")
